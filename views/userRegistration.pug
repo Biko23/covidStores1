@@ -7,7 +7,7 @@ block content
             div.col-sm-12.col-md-6
                 div.form-group
                     h3 User Registration.
-                    form(action="#" method="POST")
+                    form(action="/registrationRouter" method="POST")
                         div.form-row
                             input(type="text" name="fname" placeholder="First Name")
                             input(type="text" name="lname" placeholder="Last Name")
@@ -32,6 +32,7 @@ block content
                         div.form-row
                             input(type="password" name="password" placeholder="Password")
                             input(type="password" name="confirmPassword" placeholder="Confirm Password")
+                        input.form-control(type="submit" placeholder="Register")
             
             div.col-md-3
             
