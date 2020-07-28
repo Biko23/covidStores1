@@ -1,0 +1,98 @@
+/*.centeredText{
+    text-align: center;
+}
+
+.galSelect{
+    padding: 200px, 200px, 200px, 200px;
+    
+}*/
+footer{
+    background-color:#333333;
+    color: #8AC53F;
+}
+.fullNav{
+    position: fixed;
+}
+.csBrand{
+    color: #8AC53F;
+    padding-left: 10px;
+}
+.logo{
+    width: 50px;
+    height: 50px;
+    padding-left: 5px;
+    padding-top: 5px;
+}
+.navCovid{
+    float: right;
+    list-style-type: none;
+    margin: 0px;
+    padding-right: 10px;
+    text-align: center;
+}
+.navList{
+    text-align: center;
+    display: block;
+    padding: 8px;
+    display: inline;
+}
+a{
+    color: #8AC53F;
+    text-decoration: none;
+    text-align: center;
+}
+li a:hover{
+    background-color: green;
+}
+#logoCenter{
+    text-align: center;
+    height: 100%;
+
+}
+.bodyCenter{
+    align-content: center;
+    text-align: center;
+}
+.tableCenter{
+    display: inline-block;
+}
+th{
+    padding: 5px 5px 5px 5px;
+}
+.tableHeader{
+    color: #333333;
+    background-color: #8AC53F;
+}
+.formContent{
+    padding: 5px, 5px, 5px, 5px;
+}
+.inpadding{
+    float: right;
+    padding: 5px, 5px, 5px, 5px;
+}
+.card{
+    float: left;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+.card:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+.cardimg{
+    width: 100%;
+}
+.electronicCard{
+    float: left;
+    margin-right: 1%;
+    margin-bottom: 10px;
+    width: 41%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+.electronicCard:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+.container{
+    width: 100%;
+}
