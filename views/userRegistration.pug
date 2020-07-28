@@ -1,0 +1,37 @@
+extends layout.pug
+block content
+    div.container
+        div.row
+            div.col-md-3
+
+            div.col-sm-12.col-md-6
+                div.form-group
+                    h3 User Registration.
+                    form(action="#" method="POST")
+                        div.form-row
+                            input(type="text" name="fname" placeholder="First Name")
+                            input(type="text" name="lname" placeholder="Last Name")
+                        div.custom-control.custom-radio.custom-control-inline
+                            input.custom-control-input(type="radio" name="gender" id ="mgender" value ="Male")
+                            label.custom-control-label(for="mgender") Male
+                        div.custom-control.custom-radio.custom-control-inline
+                            input.custom-control-input(type="radio" name="gender" id ="fgender" value ="Female")
+                            label.custom-control-label(for="fgender") Female
+                        div.form-row
+                            input(type="text" name="country" placeholder="Country")
+                            input(type="text" name="city" placeholder="City")
+                        div.custom-control.custom-radio.custom-control-inline
+                            input.custom-control-input(type="radio" name="designation" id ="staff" value ="Male")
+                            label.custom-control-label(for="staff") Staff
+                        div.custom-control.custom-radio.custom-control-inline
+                            input.custom-control-input(type="radio" name="designation" id ="client" value ="Female")
+                            label.custom-control-label(for="client") Client
+                        div.form-row
+                            input(type="text" name="nin" placeholder="National Id")
+                            input(type="text" name="ein" placeholder="Employee Id")
+                        div.form-row
+                            input(type="password" name="password" placeholder="Password")
+                            input(type="password" name="confirmPassword" placeholder="Confirm Password")
+            
+            div.col-md-3
+            

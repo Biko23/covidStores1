@@ -42,7 +42,7 @@ a{
     text-align: center;
 }
 li a:hover{
-    background-color: green;
+    background-color: black;
 }
 #logoCenter{
     text-align: center;
@@ -52,6 +52,10 @@ li a:hover{
 .bodyCenter{
     align-content: center;
     text-align: center;
+}
+.formCenter{
+    padding-left: 25%;
+    padding-right: 25%;
 }
 .tableCenter{
     display: inline-block;
