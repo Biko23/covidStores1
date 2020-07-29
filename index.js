@@ -40,8 +40,9 @@ console.log('We have lift off....');
 
 //We use the HTTP "get" method to request information to show the user(browser)
 //Below we respond by "rendering"(displaying) the home.pug file. with HTML we would "send_file"
-//app.use('/', homeRoute);
-app.use('/', registrationRoute);//route error if it is not the root route?
+//Below 
+app.use('/', homeRoute);
+app.use('/registration', registrationRoute);
 
 
 //Below we instruct our application to listen to port 3000, open port 3000 for our app to run on our browser.

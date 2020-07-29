@@ -4,7 +4,7 @@ require('../models/userModel');
 
 const registrationRoute = express.Router();
 
-const register = mongoose.model('users')
+//const register = mongoose.model('users')
 
 
 registrationRoute.get('/', (req, res) => {
@@ -13,7 +13,7 @@ registrationRoute.get('/', (req, res) => {
 
 registrationRoute.post('/', (req,res) =>{
     console.log(req.body);
-    res.render('userRegistration', {title: 'User Registration'});
+    //res.render('userRegistration', {title: 'User Registration'});
 })
 
 
