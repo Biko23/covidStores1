@@ -1,10 +1,10 @@
 const express = require('express');
-const mongoose = require('Mongoose');
+const mongoose = require('mongoose');
 require('../models/userModel');
 
 const registrationRoute = express.Router();
 
-//const register = mongoose.model('users')
+const register = mongoose.model('users')
 
 
 registrationRoute.get('/', (req, res) => {
