@@ -4,10 +4,25 @@ const express = require ('express');
 const homeRoute = require('./routes/homeRouter');
 const registrationRoute = require('./routes/registrationRouter');
 const userListRoute = require('./routes/userListRouter')
+const loginRoute = require('./routes/loginRouter')
 const path = require('path');
+//We require the body-parser middleware to "parse" body of oud requests.
 const bodyParser = require('body-parser');
 require('dotenv/config')
 const mongoose = require('mongoose');
+
+//We'll be using passport to do session-based authentication.
+const passport = require('passport');
+
+//Passport-local-mongoose will help with easy intergration between mongoose and passport.
+const passportLocalMongoose = require('passport-local-mongoose');
+
+//we require express-session to handle sessions for authentication using passport.
+const expressSession = require('express-session')({
+    secret: 'secret',
+    resave: false,
+    saveUninitialized: false
+  });
 
 //instantiate your express framework
 const app = express();
@@ -20,6 +35,9 @@ app.set('view engine', 'pug');
 //Bootstrap files can be added to this folder so they can be accessed by express.
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended: true}));
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(expressSession);
 
 //Open the mongoose connection to MongoDB (covidStores1 database).
 mongoose.connect(process.env.DATABASE,{
@@ -45,6 +63,7 @@ console.log('We have lift off....');
 app.use('/', homeRoute);
 app.use('/registration', registrationRoute);
 app.use('/userList', userListRoute);
+app.use('/login', loginRoute);
 
 
 //Below we instruct our application to listen to port 3000, open port 3000 for our app to run on our browser.
