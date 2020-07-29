@@ -3,6 +3,7 @@ const express = require ('express');
 //We require the module "homeRoute" to utilize this route
 const homeRoute = require('./routes/homeRouter');
 const registrationRoute = require('./routes/registrationRouter');
+const userListRoute = require('./routes/userListRouter')
 const path = require('path');
 const bodyParser = require('body-parser');
 require('dotenv/config')
@@ -43,6 +44,7 @@ console.log('We have lift off....');
 //Below 
 app.use('/', homeRoute);
 app.use('/registration', registrationRoute);
+app.use('/userList', userListRoute);
 
 
 //Below we instruct our application to listen to port 3000, open port 3000 for our app to run on our browser.
