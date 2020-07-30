@@ -6,6 +6,9 @@
     padding: 200px, 200px, 200px, 200px;
     
 }*/
+body{
+    padding-top: 4.rem;
+}
 footer{
     background-color:#333333;
     color: #8AC53F;

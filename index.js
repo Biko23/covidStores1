@@ -1,13 +1,19 @@
 //Require express as it is the framework we will be using with node.js
 const express = require ('express');
-//We require the module "homeRoute" to utilize this route
+
+//We require the module for the different routes(controllers) to the different pages saved in the routes folder.
 const homeRoute = require('./routes/homeRouter');
 const registrationRoute = require('./routes/registrationRouter');
 const userListRoute = require('./routes/userListRouter')
 const loginRoute = require('./routes/loginRouter')
+
+const userModel = require('./models/userModel');
+
 const path = require('path');
-//We require the body-parser middleware to "parse" body of oud requests.
+//We require the body-parser middleware to "parse" body of our requests.
 const bodyParser = require('body-parser');
+
+//The dotenv file is a file that maintains details like the database connection link.
 require('dotenv/config')
 const mongoose = require('mongoose');
 
@@ -16,6 +22,11 @@ const passport = require('passport');
 
 //Passport-local-mongoose will help with easy intergration between mongoose and passport.
 const passportLocalMongoose = require('passport-local-mongoose');
+
+passport.use(userModel.createStrategy('local'));//causing errors saying the strategy requires a name.
+passport.serializeUser(userModel.serializeUser());
+passport.deserializeUser(userModel.deserializeUser());
+
 
 //we require express-session to handle sessions for authentication using passport.
 const expressSession = require('express-session')({
@@ -54,6 +65,8 @@ mongoose.connection
         console.log(`connection error: ${err.message}`);
     })
 
+
+
 //To make sure our web app has kicked off fine.... We can use console logs to check if our app runs thus far.
 console.log('We have lift off....');
 
@@ -64,6 +77,7 @@ app.use('/', homeRoute);
 app.use('/registration', registrationRoute);
 app.use('/userList', userListRoute);
 app.use('/login', loginRoute);
+
 
 
 //Below we instruct our application to listen to port 3000, open port 3000 for our app to run on our browser.

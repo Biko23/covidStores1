@@ -1,36 +1,38 @@
 extends layout
 block content
-    header.card-header
-        h4.card-title Registered users
-        |&nbsp
-    div.form-row
-        div.col.form-group.col-md-12    
-            form.search(action='/userList')
-                div.form-row
-                    div.col-md-8
-                        input.form-control(name='city' placeholder="Enter your search term ...")
-                    div.col-md-4
-                        input.btn.btn-dark.btn-block(type="submit")
-    table.table
-        thead.thead-dark
-            tr
-                th Firstname
-                th Lastname
-                th Username
-                th Gender
-                th Country
-                th City
-                th 
-        tbody
-            each user in users
+    div.container
+        header.card-header
+            h4.card-title Registered users
+            |&nbsp
+    div.container
+        div.form-row
+            div.col.form-group.col-md-12    
+                form.search(action='/userList')
+                    div.form-row
+                        div.col-md-8
+                            input.form-control(name='city' placeholder="Enter your search term ...")
+                        div.col-md-4
+                            input.btn.btn-dark.btn-block(type="submit")
+        table.table
+            thead.thead-dark
                 tr
-                    td #{user.fname}
-                    td #{user.lname}
-                    td #{user.username}
-                    td #{user.gender}
-                    td #{user.lastname}
-                    td #{user.city}
-                    td
-                        form(method="post" action='/userList/delete')
-                            input(type="hidden", placeholder="", name="id", value=user._id)
-                            button.btn.btn-dark.btn-block(type="submit") Delete
+                    th Firstname
+                    th Lastname
+                    th Username
+                    th Gender
+                    th Country
+                    th City
+                    th 
+            tbody
+                each user in users
+                    tr
+                        td #{user.fname}
+                        td #{user.lname}
+                        td #{user.username}
+                        td #{user.gender}
+                        td #{user.country}
+                        td #{user.city}
+                        td
+                            form(method="post" action='/userList/delete')
+                                input(type="hidden", placeholder="", name="id", value=user._id)
+                                button.btn.btn-dark.btn-block(type="submit") Delete
