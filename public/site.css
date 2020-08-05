@@ -6,6 +6,11 @@
     padding: 200px, 200px, 200px, 200px;
     
 }*/
+.btnlogo{
+    height: 50px;
+    width: 50px;
+    background-color: white;
+}
 body{
     padding-top: 4.rem;
 }
