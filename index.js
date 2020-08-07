@@ -4,10 +4,12 @@ const express = require ('express');
 //We require the module for the different routes(controllers) to the different pages saved in the routes folder.
 const homeRoute = require('./routes/homeRouter');
 const registrationRoute = require('./routes/registrationRouter');
+const itemRegistrationRoute = require('./routes/itemRegistrationRouter');
 const userListRoute = require('./routes/userListRouter')
 const loginRoute = require('./routes/loginRouter')
 
 const userModel = require('./models/userModel');
+const productModel = require('./models/productModel');
 
 const path = require('path');
 //We require the body-parser middleware to "parse" body of our requests.
@@ -77,6 +79,7 @@ app.use('/', homeRoute);
 app.use('/registration', registrationRoute);
 app.use('/userList', userListRoute);
 app.use('/login', loginRoute);
+app.use('/itemRegistration', itemRegistrationRoute);
 
 
 

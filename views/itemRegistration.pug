@@ -1,14 +1,47 @@
 extends layout
 block content
     div.container
-        div.row
-            div.col-sm-8
-                h4 Online Item Registration
-                form.mt-4(action="/upload" method="POST" enctype="multipart/form-data")
-                    div.form-group
-                        input.form-control-file.border(type="file" id="inputFiles")
-                        input.btn.btn-primary(type="submit" placeholder="Upload")
-        div.row
-            div.col-sm-12
-                div.preview-images
-        
+        div
+            form(action="/addInventory" method="POST")
+                div.row
+                    div.col
+                        input(type="text" name="name" placeholder="Name")
+                    div.col
+                        input(type="text" name="color" placeholder="Color")
+                div.row
+                    div.col
+                        input(type="text" name="make" placeholder="Make")
+                        br
+                        input(type="text" name="date" placeholder="dd/mm/yy")
+                    div.col
+                        input(type="text" name="description" placeholder="Description")
+                div.row
+                    div.col
+                        select(name="category")
+                            option(value="furniture") Furniture
+                            option(value="electronics") Electronics
+                            option(value="boutique") Boutique
+                        label(for="category") Category
+                    div.col
+                        select(name="subCategory")
+                            option(value="sittingRoom") Sitting room Furniture
+                            option(value="bedRoom") Bed room Furniture
+                            option(value="dinning") Dinning Furniture
+                            option(value="garden") Garden Furniture
+                        label(for="subCategory") Sub-Category
+                div.row
+                    div.col
+                        input(type="text" name="serialNo" placeholder="S/N")
+                    div.col
+                        input(type="text" name="stock" placeholder="Stock")
+                div.row
+                    div.col
+                        input(type="text" name="price" placeholder="Price")
+                    div.col
+                        input(type="text" name="downPayment" placeholder="Down payment")
+                div.row
+                    div.col
+                        input(type="text" name="payInterval" placeholder="Pay Interval")
+                div.row
+                    div.col
+                        input(type="submit")
