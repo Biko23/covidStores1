@@ -1,6 +1,7 @@
 doctype html
 html
     head
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         link(rel="stylesheet", href="/bootstrap-4.5.0-dist/css/bootstrap.css")
         link(rel="stylesheet", href="site.css")
         title=`${title}`
@@ -40,4 +41,20 @@ html
         script(src="/bootstrap-4.5.0-dist/js/jquery-3.5.1.min.js")
         script(src="store.js")
     footer
-        p © Biko Jeremy Biteete 
+        div.containerfluid.csBrand
+            div.row
+                div.col-4
+                    div.container
+                        div.row
+                            h4 Contact Us
+                        div.row
+                            h5 Phone: 
+                            p +256-789-940-343
+                        div.row
+                            h5 Email: 
+                            p bikojeremy@gmail.com
+                div.col-4
+                    <a href="#" class="fa fa-facebook"></a>
+                    <a href="#" class="fa fa-twitter"></a>
+                div.col-4
+                    p.copyright © Biko Jeremy Biteete 

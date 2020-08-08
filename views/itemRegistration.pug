@@ -6,7 +6,7 @@ block content
             h4.notice.bodyCenter (Please remeber to tag items with LTPP label as you register them. Thank you) 
     div.container
         div
-            form(action="/itemRegistration" method="POST")
+            form(action="/itemRegistration" method="POST" enctype="multipart/form-data")
                 div.row
                     div.col
                         input(type="text" name="name" placeholder="Name")
@@ -46,6 +46,9 @@ block content
                 div.row
                     div.col
                         input(type="text" name="paymentInterval" placeholder="Payment Interval")
+                div.row
+                    div.col
+                        input(type="file", name="filePath")
                 div.row
                     div.col
                         input(type="submit")

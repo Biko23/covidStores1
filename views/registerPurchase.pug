@@ -2,7 +2,7 @@ extends layout.pug
 block content
     div.container
         header.card-header
-            h4.card-title Purchase List
+            h4.card-title New Purchase
             |&nbsp
     div.container
         div.form-row
@@ -33,6 +33,7 @@ block content
                         td #{product.downPayment}
                         td #{product.paymentInterval}
                         td
-                            form(method="post" action='/purchaseRegistration/select')
-                                input(type="hidden", placeholder="", name="id", value=product._id)
+                            //-a(href="/purchaseRegistration/purchaseConfirmation/" + product._id) Select
+                            form(method="GET" action='/purchaseConfirmation')
+                                input(type="hidden", placeholder="", name="id", value=product.id)
                                 button.btn.btn-dark.btn-block(type="submit") Select

@@ -1,0 +1,22 @@
+extends layout.pug
+block content
+        div.container
+            div.row
+                div.col-12
+                    table.table(name="id")
+                        thead.thead-dark
+                            tr
+                                th Name
+                                th Make
+                                th Price
+                                th Down Payment
+                                th 
+                            tr
+                                td #{product.name}
+                                td #{product.make}
+                                td #{product.price}
+                                td #{product.downPayment}
+                                td
+                                    form(method="GET" action='/purchaseConfirmation')
+                                        input(type="hidden", placeholder="", name="id", value=product.id)
+                                        button.btn.btn-dark.btn-block(type="submit") Confirm

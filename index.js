@@ -8,6 +8,9 @@ const itemRegistrationRoute = require('./routes/itemRegistrationRouter');
 const userListRoute = require('./routes/userListRouter');
 const loginRoute = require('./routes/loginRouter');
 const purchaseRegistrationRoute = require('./routes/purchaseRegistrationRouter');
+const purchaseConfirmationRoute = require('./routes/purchaseConfirmationRouter');
+
+
 
 const userModel = require('./models/userModel');
 const productModel = require('./models/productModel');
@@ -82,6 +85,9 @@ app.use('/userList', userListRoute);
 app.use('/login', loginRoute);
 app.use('/itemRegistration', itemRegistrationRoute);
 app.use('/purchaseRegistration', purchaseRegistrationRoute);
+app.use('/purchaseConfirmation', purchaseConfirmationRoute);
+
+
 
 
 

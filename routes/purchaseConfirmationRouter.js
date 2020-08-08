@@ -6,7 +6,7 @@ require('../models/productModel');
 const mongoose = require('mongoose');
 //const { json } = require('body-parser');
 
-const purchaseRegistrationRoute = express.Router();
+const purchaseConfirmationRoute = express.Router();
 
 //We need to import the model we are using to register our products.
 const productRegister = mongoose.model('products');
@@ -15,19 +15,7 @@ const productRegister = mongoose.model('products');
 // purchaseRegistrationRoute.get('/', (req, res) => {
 //     res.render('registerPurchase', {title: 'Purchase Registration'});
 // });
-
-
-purchaseRegistrationRoute.get('/', async(req, res) => {
-    try{
-        let items = await productRegister.find();
-        if(req.query.name){
-            items = await productRegister.find({name: req.query.name});
-        }res.render('registerPurchase', {products: items});
-    }catch(err){
-        res.status(400).send("unable to find items in the database");
-    }
-})
-purchaseRegistrationRoute.get('/purchaseConfirmation', async(req, res) => {
+purchaseConfirmationRoute.get('/', async(req, res) => {
     const item = await productRegister.findById(req.query.id);
     //res.json(items);
     console.log(item);
@@ -45,4 +33,4 @@ purchaseRegistrationRoute.get('/purchaseConfirmation', async(req, res) => {
 })
 
 //We export this route to be accessed in the index.js
-module.exports = purchaseRegistrationRoute;
+module.exports = purchaseConfirmationRoute;

@@ -41,23 +41,26 @@ const productSchema = new mongoose.Schema({
         required: 'Please Enter serial number'
     },
     stock:{
-        type: String,
+        type: Number,
         trim: true,
         required: 'How many are in stock?'
     },
     price:{
-        type: String,
+        type: Number,
         trim: true,
         required: 'Please Enter price'
     },
     downPayment:{
-        type: String,
+        type: Number,
         trim: true,
         required: 'How much is the down payment?'
     },
     paymentInterval:{
-        type: String,
+        type: Number,
         trim: true,
+    },
+    productImage:{
+        type: String
     }
 });
 
