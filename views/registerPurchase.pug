@@ -1,2 +1,38 @@
 extends layout.pug
 block content
+    div.container
+        header.card-header
+            h4.card-title Purchase List
+            |&nbsp
+    div.container
+        div.form-row
+            div.col.form-group.col-md-12    
+                form.search(action='/registerPurchase')
+                    div.form-row
+                        div.col-md-8
+                            input.form-control(name='name' placeholder="Search by name...")
+                        div.col-md-4
+                            input.btn.btn-dark.btn-block(type="submit")
+        table.table
+            thead.thead-dark
+                tr
+                    th Name
+                    th Make
+                    th Description
+                    th Price
+                    th Down payment
+                    th Payment Interval
+                    th 
+            tbody
+                each product in products
+                    tr
+                        td #{product.name}
+                        td #{product.make}
+                        td #{product.description}
+                        td #{product.price}
+                        td #{product.downPayment}
+                        td #{product.paymentInterval}
+                        td
+                            form(method="post" action='/purchaseRegistration/select')
+                                input(type="hidden", placeholder="", name="id", value=product._id)
+                                button.btn.btn-dark.btn-block(type="submit") Select

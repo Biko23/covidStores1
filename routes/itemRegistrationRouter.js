@@ -1,40 +1,48 @@
 const express = require('express');
-const mongoose = require('mongoose');
+
 require('../models/productModel');
+
+const mongoose = require('mongoose');
 
 const itemRegistrationRoute = express.Router();
 
-const productRegister = mongoose.model('products')
+//We need to import the model we are using to register our products.
+const productRegister = mongoose.model('products');
 
-
+//This is the route to display the Product registration page
 itemRegistrationRoute.get('/', (req, res) => {
     res.render('itemRegistration', {title: 'Product Registration'});
 });
 //Below we are attempting to register a new product
-itemRegistrationRoute.post("/", async (req, res) => {
-    try {
-      const items = new productRegister({//This is the product item object to be registered
-                name: req.body.name,
-                color: req.body.color,
-                make: req.body.make,
-                description: req.body.description,
-                date: req.body.date,
-                category: req.body.category,
-                subCategory: req.body.subCategory,
-                serialNo: req.body.serialNo,
-                stock: req.body.stock,
-                price: req.body.price,
-                downPayment: req.body.downPayment,
-                payInterval: req.body.payInterval});
-      await userRegister.register(items, req.body.password, (err) => {
-        if (err) { throw err }
-        res.redirect('/inventoryList')
-      })
-    } catch (err) {
-       res.status(400).send('Sorry! Something went wrong.')
-       console.log(err)
-    }
+itemRegistrationRoute.post("/", async (req, res) =>{
+          const items = new productRegister({         //This is the product item object to be registered
+            name: req.body.name,
+            color: req.body.color,
+            make: req.body.make,
+            description: req.body.description,
+            date: req.body.date,
+            category: req.body.category,
+            subCategory: req.body.subCategory,
+            serialNo: req.body.serialNo,
+            stock: req.body.stock,
+            price: req.body.price,
+            downPayment: req.body.downPayment,
+            paymentInterval: req.body.paymentInterval});
+          try {
+
+            const inventory = items.save();
+            res.render('itemRegistration');
+            //res.json(inventory);
+
+
+          
+        } catch (error) {
+          //res.status(400).send('Sorry! Something went wrong.')
+          //console.log(error)
+          res.json({message: error});
+          
+        }
   })
 
-
+//We export this route to be accessed in the index.js
 module.exports = itemRegistrationRoute;
