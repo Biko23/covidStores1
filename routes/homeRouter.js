@@ -6,7 +6,10 @@ const homeRoute = express.Router();
 
 //This is the route to the end point of the home page(home.pug).
 homeRoute.get('/', (req, res) => {
-    res.render('home');
+    res.render('home', {title: 'Home'});
+})
+homeRoute.get('/home/furniture', (req, res) => {
+    res.render('furniture', {title: 'Furniture'});
 })
 
 //we export the "homeRoute" module so it can be used in the index.js

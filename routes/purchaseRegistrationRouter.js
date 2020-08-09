@@ -22,7 +22,7 @@ purchaseRegistrationRoute.get('/', async(req, res) => {
         let items = await productRegister.find();
         if(req.query.name){
             items = await productRegister.find({name: req.query.name});
-        }res.render('registerPurchase', {products: items});
+        }res.render('registerPurchase', {title: 'Purchase Registration'}, {products: items});
     }catch(err){
         res.status(400).send("unable to find items in the database");
     }
@@ -31,7 +31,7 @@ purchaseRegistrationRoute.get('/purchaseConfirmation', async(req, res) => {
     const item = await productRegister.findById(req.query.id);
     //res.json(items);
     console.log(item);
-    res.render('purchaseConfirmation', {product: item});
+    res.render('purchaseConfirmation', {product: item}, {title: 'Purchase Registration'});
     //res.render('purchaseConfirmation', {product});
     //console.log('We get here....');
     // try{

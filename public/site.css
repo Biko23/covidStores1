@@ -49,6 +49,9 @@ a{
     text-decoration: none;
     text-align: center;
 }
+.select.form-control:focus{
+    background-color: #8AC53F;
+}
 
 #logoCenter{
     text-align: center;
@@ -57,6 +60,9 @@ a{
 }
 .bodyCenter{
     align-content: center;
+    text-align: center;
+}
+.focusCenter{
     text-align: center;
 }
 .formCenter{

@@ -3,7 +3,7 @@ const loginRoute = express.Router();
 const passport = require('passport');
 // gets and displays a login page
 loginRoute.get('/', (req, res) => {
-    res.render('login')
+    res.render('login', {title: 'Login'})
 })
 //process the username and password
 loginRoute.post('/', passport.authenticate('local'), (req, res) => {

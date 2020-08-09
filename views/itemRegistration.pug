@@ -2,53 +2,57 @@ extends layout
 block content
     div.container
         div.row
-            h3.bodyCenter Welcome to inventory registeration.
-            h4.notice.bodyCenter (Please remeber to tag items with LTPP label as you register them. Thank you) 
+            div.col
+                h3.focusCenter Welcome to inventory registeration.
+                h4.notice.focusCenter (Please remeber to tag items with LTPP label as you register them. Thank you) 
     div.container
-        div
-            form(action="/itemRegistration" method="POST" enctype="multipart/form-data")
-                div.row
-                    div.col
-                        input(type="text" name="name" placeholder="Name")
-                    div.col
-                        input(type="text" name="color" placeholder="Color")
-                div.row
-                    div.col
-                        input(type="text" name="make" placeholder="Make")
-                        br
-                        input(type="text" name="date" placeholder="dd/mm/yy")
-                    div.col
-                        input(type="text" name="description" placeholder="Description")
-                div.row
-                    div.col
-                        select(name="category")
-                            option(value="furniture") Furniture
-                            option(value="electronics") Electronics
-                            option(value="boutique") Boutique
-                        label(for="category") Category
-                    div.col
-                        select(name="subCategory")
-                            option(value="sittingRoom") Sitting room Furniture
-                            option(value="bedRoom") Bed room Furniture
-                            option(value="dinning") Dinning Furniture
-                            option(value="garden") Garden Furniture
-                        label(for="subCategory") Sub-Category
-                div.row
-                    div.col
-                        input(type="text" name="serialNo" placeholder="S/N")
-                    div.col
-                        input(type="text" name="stock" placeholder="Stock")
-                div.row
-                    div.col
-                        input(type="text" name="price" placeholder="Price")
-                    div.col
-                        input(type="text" name="downPayment" placeholder="Down payment")
-                div.row
-                    div.col
-                        input(type="text" name="paymentInterval" placeholder="Payment Interval")
-                div.row
-                    div.col
-                        input(type="file", name="productImage")
-                div.row
-                    div.col
-                        input(type="submit")
+        div.row
+            div.col-1
+            div.col-10
+                form.form-group(action="/itemRegistration" method="POST" enctype="multipart/form-data")
+                    div.row
+                        div.col
+                            input.form-control(type="text" name="name" placeholder="Name")
+                        div.col
+                            input.form-control(type="text" name="color" placeholder="Color")
+                    div.row
+                        div.col
+                            input.form-control(type="text" name="make" placeholder="Make")
+                            br
+                            input.form-control(type="text" name="date" placeholder="dd/mm/yy")
+                        div.col
+                            textarea.form-control(name="description" placeholder="Description" cols="30" rows="5")
+                    div.row
+                        div.col
+                            select.form-control(name="category")
+                                option(value="furniture") Furniture
+                                option(value="electronics") Electronics
+                                option(value="boutique") Boutique
+                            label(for="category") Category
+                        div.col
+                            select.form-control(name="subCategory")
+                                option(value="sittingRoom") Sitting room Furniture
+                                option(value="bedRoom") Bed room Furniture
+                                option(value="dinning") Dinning Furniture
+                                option(value="garden") Garden Furniture
+                            label(for="subCategory") Sub-Category
+                    div.row
+                        div.col
+                            input.form-control(type="text" name="serialNo" placeholder="S/N")
+                        div.col
+                            input.form-control(type="text" name="stock" placeholder="Stock")
+                    div.row
+                        div.col
+                            input.form-control(type="text" name="price" placeholder="Price")
+                        div.col
+                            input.form-control(type="text" name="downPayment" placeholder="Down payment")
+                    div.row
+                        div.col
+                            input.form-control(type="text" name="paymentInterval" placeholder="Payment Interval")
+                    div.row
+                        div.col
+                            input.form-control-file(type="file", name="productImage")
+                    div.row
+                        div.col
+                            button.form-control.btn.btn-outline-success(type="submit" placeholder="Record") Record
+            div.col-1
