@@ -5,27 +5,26 @@ html
         link(rel="stylesheet", href="/bootstrap-4.5.0-dist/css/bootstrap.css")
         link(rel="stylesheet", href="site.css")
         title=`${title}`
-    body
-        nav.navbar.navbar-expand-lg.bg-dark.fixed-top
-            img.logo(src="img/logo.PNG")
-            p.navbar-brand.csBrand Covid Stores
-            button.navbar-toggler(type="button" data-toggle="collapse" data-target="#navbarSupportContent" aria-controls="navbarSupportedContent" aria-label="Toggle navigation")
-                span.navbar-toggler-icon
-            div.collapse.navbar-collapse(id="navbarSupportedContent")
-                ul.navbar-nav.ml-auto
-                    li.nav-item.active
-                        a.nav-link(href="#") About Us
-                    li.nav-item
-                        a.nav-link(href="#Furniture") Furniture
-                    li.nav-item
-                        a.nav-link(href="#Electronics") Electronics
-                    li.nav-item
-                        a.nav-link(href="#Bootique") Boutique
-                    li
-                        a(href="/login")
-                            button
-                                img.btnlogo(src="/img/staffonly.png", alt="Staff Login")
-                
+    
+    nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.fixed-top
+        img.logo(src="img/logo2.PNG")
+        p.navbar-brand.csBrand Covid Stores
+        button.navbar-toggler(type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation")
+            span.navbar-toggler-icon
+        div.collapse.navbar-collapse(id="navbarSupportedContent")
+            ul.navbar-nav.ml-auto
+                li.nav-item
+                    a.nav-link(href="#AboutUs") About Us
+                li.nav-item
+                    a.nav-link(href="/furniture") Furniture
+                li.nav-item
+                    a.nav-link(href="/electronics") Electronics
+                li.nav-item
+                    a.nav-link(href="/boutique") Boutique
+        a(href="/login")
+            button.btn.btn-outline-success
+                img.btnlogo(src="/img/staffonly.png", alt="Staff Login") 
+    body    
         div.containerfluid
             
             div.row
@@ -46,15 +45,18 @@ html
                 div.col-4
                     div.container
                         div.row
-                            h4 Contact Us
+                            h5 Contact Us
                         div.row
-                            h5 Phone: 
+                            h6 Phone: 
                             p +256-789-940-343
                         div.row
-                            h5 Email: 
+                            h6 Email: 
                             p bikojeremy@gmail.com
                 div.col-4
-                    <a href="#" class="fa fa-facebook"></a>
-                    <a href="#" class="fa fa-twitter"></a>
+                    div.row
+                        h5 Follow Us
+                    div.row
+                        <a href="#" class="fa fa-facebook"></a>
+                        <a href="#" class="fa fa-twitter"></a>
                 div.col-4
                     p.copyright © Biko Jeremy Biteete 
