@@ -4,17 +4,26 @@ require('../models/productModel');
 
 const mongoose = require('mongoose');
 
+//We import multer to handle our image upload and retrieval
 const multer = require('multer');
 const storage = multer.diskStorage({
-  destination: function(req, file, cb){
-    cb(null, './uploads/');
+  destination: (req, file, cb) => {
+    cb(null, 'uploads');
   },
-  filename: function(req, file, cb){
-    cb(null, new Date().toISOString() + file.originalname);
+  filename: (req, file, cb) => {
+    cb(null, file.originalname);
   }
 
 });
-const upload = multer({storage: storage});
+
+const fileFilter = (req, file, cb) => {
+  if (file.mimetype == 'image/jpeg' || file.mimetype == 'image/png'){
+    cb(null, true);
+  } else{
+    cb(null, false);
+  }
+}
+const upload = multer({storage: storage, fileFilter: fileFilter});
 
 const itemRegistrationRoute = express.Router();
 
@@ -26,13 +35,13 @@ itemRegistrationRoute.get('/', (req, res) => {
     res.render('itemRegistration', {title: 'Product Registration'});
 });
 //Below we are attempting to register a new product
-itemRegistrationRoute.post("/", upload.single('productImage') ,async (req, res) =>{
-          const items = await new productRegister({         //This is the product item object to be registered
+itemRegistrationRoute.post("/", upload.single('productImage'),async (req, res) =>{
+          const items =  new productRegister({         //This is the product item object to be registered
             name: req.body.name,
             color: req.body.color,
             make: req.body.make,
             description: req.body.description,
-            date: req.body.date,
+            date:req.body.date,
             category: req.body.category,
             subCategory: req.body.subCategory,
             serialNo: req.body.serialNo,
@@ -40,10 +49,11 @@ itemRegistrationRoute.post("/", upload.single('productImage') ,async (req, res) 
             price: req.body.price,
             downPayment: req.body.downPayment,
             paymentInterval: req.body.paymentInterval,
+            productImage: req.file.path
           });
           try {
 
-            const inventory = items.save();
+            const products = await items.save();
             res.render('itemRegistration');
             //res.json(inventory);
 
@@ -51,7 +61,7 @@ itemRegistrationRoute.post("/", upload.single('productImage') ,async (req, res) 
           
         } catch (error) {
           //res.status(400).send('Sorry! Something went wrong.')
-          //console.log(error)
+          console.log(error)
           res.json({message: error});
           
         }
