@@ -22,6 +22,7 @@ block content
                     th Price
                     th Down payment
                     th Payment Interval
+                    th Image
                     th 
             tbody
                 each product in products
@@ -32,6 +33,8 @@ block content
                         td #{product.price}
                         td #{product.downPayment}
                         td #{product.paymentInterval}
+                        td
+                            img(src=product.productImage, style="width: 100px; height: 100px;" alt="")
                         td
                             //-a(href="/purchaseRegistration/purchaseConfirmation/" + product._id) Select
                             form(method="GET" action='/purchaseConfirmation')

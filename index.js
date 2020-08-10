@@ -51,6 +51,7 @@ app.set('view engine', 'pug');
 //Inorder to use external "static" css and js with express we ask express to access a file, "public", where we will save these files.
 //Bootstrap files can be added to this folder so they can be accessed by express.
 app.use(express.static('public'));
+app.use('/uploads',express.static('uploads'));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(passport.initialize());
 app.use(passport.session());

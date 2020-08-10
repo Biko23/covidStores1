@@ -22,7 +22,7 @@ purchaseRegistrationRoute.get('/', async(req, res) => {
         let items = await productRegister.find();
         if(req.query.name){
             items = await productRegister.find({name: req.query.name});
-        }res.render('registerPurchase', {title: 'Purchase Registration'}, {products: items});
+        }res.render('registerPurchase', {products: items});
     }catch(err){
         res.status(400).send("unable to find items in the database");
     }

@@ -19,7 +19,7 @@ purchaseConfirmationRoute.get('/', async(req, res) => {
     const item = await productRegister.findById(req.query.id);
     //res.json(items);
     console.log(item);
-    res.render('purchaseConfirmation', {product: item}, {title: 'Purchase Confirmation'});
+    res.render('purchaseConfirmation', {product: item});
     //res.render('purchaseConfirmation', {product});
     //console.log('We get here....');
     // try{
