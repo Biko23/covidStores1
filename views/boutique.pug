@@ -1,4 +1,4 @@
-extends layout.pug
+extends layout1.pug
 block content
     div.container
         div.row
@@ -6,103 +6,43 @@ block content
                 div.container
                     div.row
                         div.col-12
-                            h3 LADIES
-                    div.row
-                        div.card.col-sm-3.col-md-2.col-lg-1
-                            img.cardimg(src="/img/sitting.png", alt="Living room Furniture")
-                            div
-                                h4 Living room
-                                p This is it    
-                        div.card.col-sm-3.col-md-2.col-lg-1
-                            img.cardimg(src="/img/sitting.png", alt="Living room Furniture")
-                            div
-                                h4 Living room
-                                p This is it    
-                        div.card.col-sm-3.col-md-2.col-lg-1
-                            img.cardimg(src="/img/sitting.png", alt="Living room Furniture")
-                            div
-                                h4 Living room
-                                p This is it    
-                        div.card.col-sm-3.col-md-2.col-lg-1
-                            img.cardimg(src="/img/sitting.png", alt="Living room Furniture")
-                            div
-                                h4 Living room
-                                p This is it    
-                        div.card.col-sm-3.col-md-2.col-lg-1
-                            img.cardimg(src="/img/sitting.png", alt="Living room Furniture")
-                            div
-                                h4 Living room
-                                p This is it    
-                        div.card.col-sm-3.col-md-2.col-lg-1
-                            img.cardimg(src="/img/sitting.png", alt="Living room Furniture")
-                            div
-                                h4 Living room
-                                p This is it    
-                        div.card.col-sm-3.col-md-2.col-lg-1
-                            img.cardimg(src="/img/sitting.png", alt="Living room Furniture")
-                            div
-                                h4 Living room
-                                p This is it    
-                        div.card.col-sm-3.col-md-2.col-lg-1
-                            img.cardimg(src="/img/sitting.png", alt="Living room Furniture")
-                            div
-                                h4 Living room
-                                p This is it    
-                        div.card.col-sm-3.col-md-2.col-lg-1
-                            img.cardimg(src="/img/sitting.png", alt="Living room Furniture")
-                            div
-                                h4 Living room
-                                p This is it    
-                        div.card.col-sm-3.col-md-2.col-lg-1
-                            img.cardimg(src="/img/sitting.png", alt="Living room Furniture")
-                            div
-                                h4 Living room
-                                p This is it    
-                        div.card.col-sm-3.col-md-2.col-lg-1
-                            img.cardimg(src="/img/sitting.png", alt="Living room Furniture")
-                            div
-                                h4 Living room
-                                p This is it    
-                        div.card.col-sm-3.col-md-2.col-lg-1
-                            img.cardimg(src="/img/sitting.png", alt="Living room Furniture")
-                            div
-                                h4 Living room
-                                p This is it
-        div.row
-            div.col-12
-                div.container
+                            h3 Ladies
+                        div.row
+                            each product in products
+                                if product.category == "Ladies"
+                                    div.card
+                                        img.ecardimg(src=('/' + product.productImage), alt="no mage", srcset="")
+                                        div
+                                            h4 #{product.name}
+                                            p Price:#{product.price}
+                                            div.dpCard.card
+                                                h6 Down Payment:
+                                                p #{product.downPayment}
                     div.row
                         div.col-12
-                            h3 KIDS
-                    div.row
-                        div.col-sm-3.col-md-2.col-lg-1
-                        div.col-sm-3.col-md-2.col-lg-1
-                        div.col-sm-3.col-md-2.col-lg-1
-                        div.col-sm-3.col-md-2.col-lg-1
-                        div.col-sm-3.col-md-2.col-lg-1
-                        div.col-sm-3.col-md-2.col-lg-1
-                        div.col-sm-3.col-md-2.col-lg-1
-                        div.col-sm-3.col-md-2.col-lg-1
-                        div.col-sm-3.col-md-2.col-lg-1
-                        div.col-sm-3.col-md-2.col-lg-1
-                        div.col-sm-3.col-md-2.col-lg-1
-                        div.col-sm-3.col-md-2.col-lg-1
-        div.row
-            div.col-12
-                div.container
+                            h3 Kids
+                        div.row
+                            each product in products
+                                if product.category == "kids"
+                                    div.card
+                                        img.ecardimg(src=('/' + product.productImage), alt="no mage", srcset="")
+                                        div
+                                            h4 #{product.name}
+                                            p Price:#{product.price}
+                                            div.dpCard.card
+                                                h6 Down Payment:
+                                                p #{product.downPayment}
                     div.row
                         div.col-12
-                            h3 GENTLEMEN
-                    div.row
-                        div.col-sm-3.col-md-2.col-lg-1
-                        div.col-sm-3.col-md-2.col-lg-1
-                        div.col-sm-3.col-md-2.col-lg-1
-                        div.col-sm-3.col-md-2.col-lg-1
-                        div.col-sm-3.col-md-2.col-lg-1
-                        div.col-sm-3.col-md-2.col-lg-1
-                        div.col-sm-3.col-md-2.col-lg-1
-                        div.col-sm-3.col-md-2.col-lg-1
-                        div.col-sm-3.col-md-2.col-lg-1
-                        div.col-sm-3.col-md-2.col-lg-1
-                        div.col-sm-3.col-md-2.col-lg-1
-                        div.col-sm-3.col-md-2.col-lg-1
+                            h3 Gentlemen
+                        div.row
+                            each product in products
+                                if product.category == "gentlemen"
+                                    div.card
+                                        img.ecardimg(src=('/' + product.productImage), alt="no mage", srcset="")
+                                        div
+                                            h4 #{product.name}
+                                            p Price:#{product.price}
+                                            div.dpCard.card
+                                                h6 Down Payment:
+                                                p #{product.downPayment}

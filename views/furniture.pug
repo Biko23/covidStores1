@@ -7,144 +7,56 @@ block content
                     div.row
                         div.col-12
                             h3 SITTING ROOM FURNITURE
-                    div.row
-                        div.card.col-sm-6.col-md-4.col-lg-2
-                            img.cardimg(src="/img/sitting.png", alt="Living room Furniture")
-                            div
-                                h4 Living room
-                                p This is it    
-                        div.card.col-sm-6.col-md-4.col-lg-2
-                            img.cardimg(src="/img/sitting.png", alt="Living room Furniture")
-                            div
-                                h4 Living room
-                                p This is it    
-                        div.card.col-sm-6.col-md-4.col-lg-2
-                            img.cardimg(src="/img/sitting.png", alt="Living room Furniture")
-                            div
-                                h4 Living room
-                                p This is it    
-                        div.card.col-sm-6.col-md-4.col-lg-2
-                            img.cardimg(src="/img/sitting.png", alt="Living room Furniture")
-                            div
-                                h4 Living room
-                                p This is it    
-                        div.card.col-sm-6.col-md-4.col-lg-2
-                            img.cardimg(src="/img/sitting.png", alt="Living room Furniture")
-                            div
-                                h4 Living room
-                                p This is it    
-                        div.card.col-sm-6.col-md-4.col-lg-2
-                            img.cardimg(src="/img/sitting.png", alt="Living room Furniture")
-                            div
-                                h4 Living room
-                                p This is it
-        
+                        div.row
+                            each product in products
+                                if product.category == "livingroom"
+                                    div.card
+                                        img.ecardimg(src=('/' + product.productImage), alt="no mage", srcset="")
+                                        div
+                                            h4 #{product.name}
+                                            p Price:#{product.price}
+                                            div.dpCard.card
+                                                h6 Down Payment:
+                                                p #{product.downPayment}
                     div.row
                         div.col-12
-                            h3 BED ROOM FURNITURE
-                    div.row
-                        div.card.col-sm-6.col-md-4.col-lg-2
-                            img.cardimg(src="/img/sitting.png", alt="Living room Furniture")
-                            div
-                                h4 Living room
-                                p This is it    
-                        div.card.col-sm-6.col-md-4.col-lg-2
-                            img.cardimg(src="/img/sitting.png", alt="Living room Furniture")
-                            div
-                                h4 Living room
-                                p This is it    
-                        div.card.col-sm-6.col-md-4.col-lg-2
-                            img.cardimg(src="/img/sitting.png", alt="Living room Furniture")
-                            div
-                                h4 Living room
-                                p This is it    
-                        div.card.col-sm-6.col-md-4.col-lg-2
-                            img.cardimg(src="/img/sitting.png", alt="Living room Furniture")
-                            div
-                                h4 Living room
-                                p This is it    
-                        div.card.col-sm-6.col-md-4.col-lg-2
-                            img.cardimg(src="/img/sitting.png", alt="Living room Furniture")
-                            div
-                                h4 Living room
-                                p This is it    
-                        div.card.col-sm-6.col-md-4.col-lg-2
-                            img.cardimg(src="/img/sitting.png", alt="Living room Furniture")
-                            div
-                                h4 Living room
-                                p This is it
-        
+                            h3 Bed room Furniture
+                        div.row
+                            each product in products
+                                if product.category == "bedroom"
+                                    div.card
+                                        img.ecardimg(src=('/' + product.productImage), alt="no mage", srcset="")
+                                        div
+                                            h4 #{product.name}
+                                            p Price:#{product.price}
+                                            div.dpCard.card
+                                                h6 Down Payment:
+                                                p #{product.downPayment}
                     div.row
                         div.col-12
-                            h3 DINNING FURNITURE
-                    div.row
-                        div.card.col-sm-6.col-md-4.col-lg-2
-                            img.cardimg(src="/img/sitting.png", alt="Living room Furniture")
-                            div
-                                h4 Living room
-                                p This is it    
-                        div.card.col-sm-6.col-md-4.col-lg-2
-                            img.cardimg(src="/img/sitting.png", alt="Living room Furniture")
-                            div
-                                h4 Living room
-                                p This is it    
-                        div.card.col-sm-6.col-md-4.col-lg-2
-                            img.cardimg(src="/img/sitting.png", alt="Living room Furniture")
-                            div
-                                h4 Living room
-                                p This is it    
-                        div.card.col-sm-6.col-md-4.col-lg-2
-                            img.cardimg(src="/img/sitting.png", alt="Living room Furniture")
-                            div
-                                h4 Living room
-                                p This is it    
-                        div.card.col-sm-6.col-md-4.col-lg-2
-                            img.cardimg(src="/img/sitting.png", alt="Living room Furniture")
-                            div
-                                h4 Living room
-                                p This is it    
-                        div.card.col-sm-6.col-md-4.col-lg-2
-                            img.cardimg(src="/img/sitting.png", alt="Living room Furniture")
-                            div
-                                h4 Living room
-                                p This is it                
-        
+                            h3 Dining Furniture
+                        div.row
+                            each product in products
+                                if product.category == "dining"
+                                    div.card
+                                        img.ecardimg(src=('/' + product.productImage), alt="no mage", srcset="")
+                                        div
+                                            h4 #{product.name}
+                                            p Price:#{product.price}
+                                            div.dpCard.card
+                                                h6 Down Payment:
+                                                p #{product.downPayment}
                     div.row
                         div.col-12
-                            h3 GARDEN FURNITURE
-                    div.row
-                        div.card.col-sm-6.col-md-4.col-lg-2
-                            img.cardimg(src="/img/sitting.png", alt="Living room Furniture")
-                            div
-                                h4 Living room
-                                p This is it    
-                        div.card.col-sm-6.col-md-4.col-lg-2
-                            img.cardimg(src="/img/sitting.png", alt="Living room Furniture")
-                            div
-                                h4 Living room
-                                p This is it    
-                        div.card.col-sm-6.col-md-4.col-lg-2
-                            img.cardimg(src="/img/sitting.png", alt="Living room Furniture")
-                            div
-                                h4 Living room
-                                p This is it    
-                        div.card.col-sm-6.col-md-4.col-lg-2
-                            img.cardimg(src="/img/sitting.png", alt="Living room Furniture")
-                            div
-                                h4 Living room
-                                p This is it    
-                        div.card.col-sm-6.col-md-4.col-lg-2
-                            img.cardimg(src="/img/sitting.png", alt="Living room Furniture")
-                            div
-                                h4 Living room
-                                p This is it    
-                        div.card.col-sm-6.col-md-4.col-lg-2
-                            img.cardimg(src="/img/sitting.png", alt="Living room Furniture")
-                            div
-                                h4 Living room
-                                p This is it
-                    
-
-
-
-
+                            h3 Garden Furniture
+                        div.row
+                            each product in products
+                                if product.category == "garden"
+                                    div.card
+                                        img.ecardimg(src=('/' + product.productImage), alt="no mage", srcset="")
+                                        div
+                                            h4 #{product.name}
+                                            p Price:#{product.price}
+                                            div.dpCard.card
+                                                h6 Down Payment:
+                                                p #{product.downPayment}

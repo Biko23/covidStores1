@@ -5,6 +5,9 @@ const express = require ('express');
 const homeRoute = require('./routes/homeRouter');
 const registrationRoute = require('./routes/registrationRouter');
 const itemRegistrationRoute = require('./routes/itemRegistrationRouter');
+const electronicsRegistrationRoute = require('./routes/electronicsRegistrationRouter')
+const furnitureRegistrationRoute = require('./routes/furnitureRegistrationRouter');
+const boutiqueRegistrationRoute = require('./routes/boutiqueRegistrationRouter');
 const userListRoute = require('./routes/userListRouter');
 const loginRoute = require('./routes/loginRouter');
 const purchaseRegistrationRoute = require('./routes/purchaseRegistrationRouter');
@@ -85,6 +88,9 @@ app.use('/registration', registrationRoute);
 app.use('/userList', userListRoute);
 app.use('/login', loginRoute);
 app.use('/itemRegistration', itemRegistrationRoute);
+app.use('/electronicsRegistration', electronicsRegistrationRoute);
+app.use('/furnitureRegistration', furnitureRegistrationRoute);
+app.use('/boutiqueRegistration', boutiqueRegistrationRoute);
 app.use('/purchaseRegistration', purchaseRegistrationRoute);
 app.use('/purchaseConfirmation', purchaseConfirmationRoute);
 

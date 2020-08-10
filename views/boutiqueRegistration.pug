@@ -1,0 +1,51 @@
+extends layout
+block content
+    div.container
+        div.row
+            div.col
+                h3.focusCenter Welcome to Electronics registeration.
+                h4.notice.focusCenter (Please remeber to tag items with LTPP label as you register them. Thank you) 
+    div.container
+        div.row
+            div.col-1
+            div.col-10
+                form.form-group(action="/boutiqueRegistration" method="POST" enctype="multipart/form-data")
+                    div.row
+                        div.col
+                            input.form-control(type="text" name="name" placeholder="Name")
+                        div.col
+                            input.form-control(type="text" name="color" placeholder="Color")
+                    div.row
+                        div.col
+                            input.form-control(type="text" name="make" placeholder="Make")
+                            br
+                            input.form-control(type="text" name="date" placeholder="dd/mm/yy")
+                        div.col
+                            textarea.form-control(name="description" placeholder="Description" cols="30" rows="5")
+                    div.row
+                        div.col
+                            select.form-control(name="category")
+                                option(value="Ladies") Ladies
+                                option(value="kids") Kids
+                                option(value="gentlemen") Gentlemen
+                            label(for="category") Category
+                    div.row
+                        div.col
+                            input.form-control(type="text" name="serialNo" placeholder="S/N")
+                        div.col
+                            input.form-control(type="text" name="stock" placeholder="Stock")
+                    div.row
+                        div.col
+                            input.form-control(type="text" name="price" placeholder="Price")
+                        div.col
+                            input.form-control(type="text" name="downPayment" placeholder="Down payment")
+                    div.row
+                        div.col
+                            input.form-control(type="text" name="paymentInterval" placeholder="Payment Interval")
+                    div.row
+                        div.col
+                            input.form-control-file(type="file", name="productImage")
+                    div.row
+                        div.col
+                            button.form-control.btn.btn-outline-success(type="submit" placeholder="Record") Record
+            div.col-1

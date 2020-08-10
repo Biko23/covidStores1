@@ -98,6 +98,15 @@ th{
 .cardimg{
     width: 100%;
 }
+.ecardimg{
+    width: 200px;
+    height: 200px;
+}
+.dpCard{
+    float: right;
+    background-color: #8AC53F;
+    color: #333333;
+}
 .electronicCard{
     float: left;
     margin-right: 1%;
