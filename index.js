@@ -53,13 +53,13 @@ app.set('view engine', 'pug');
 
 //Inorder to use external "static" css and js with express we ask express to access a file, "public", where we will save these files.
 //Bootstrap files can be added to this folder so they can be accessed by express.
-//Below is us setting middleware to be used globally in the application.
+
 app.use(express.static('public'));
 app.use('/uploads',express.static('uploads'));
 app.use(bodyParser.urlencoded({extended: true}));
+app.use(expressSession);
 app.use(passport.initialize());
 app.use(passport.session());
-app.use(expressSession);
 
 //Open the mongoose connection to MongoDB (covidStores1 database).
 mongoose.connect(process.env.DATABASE,{
@@ -95,6 +95,18 @@ app.use('/boutiqueRegistration', boutiqueRegistrationRoute);
 app.use('/purchaseRegistration', purchaseRegistrationRoute);
 app.use('/purchaseConfirmation', purchaseConfirmationRoute);
 
+//logout route
+app.post('/logout', (req, res) => {
+    if (req.session){
+        req.session.destroy(function (err){
+            if (err){
+
+            }else{
+                return res.redirect('/login');
+            }
+        })
+    }
+})
 
 
 

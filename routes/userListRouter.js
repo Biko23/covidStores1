@@ -10,6 +10,7 @@ const register = mongoose.model('users')
 
 //This is the route to the end point of the home page(home.pug).
 userListRoute.get('/', async(req, res) => {
+    if (req.session.user){
     try{
         let items = await register.find();
         if(req.query.gender){
@@ -18,6 +19,10 @@ userListRoute.get('/', async(req, res) => {
     }catch(err){
         res.status(400).send("unable to find items in the database");
     }
+}else{
+    console.log('User not authorised');
+    res.redirect('/login');
+}
 })
 userListRoute.post('/delete', async(req, res) => {
     try{

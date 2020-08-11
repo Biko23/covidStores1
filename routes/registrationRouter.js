@@ -8,7 +8,12 @@ const userRegister = mongoose.model('users')
 
 
 registrationRoute.get('/', (req, res) => {
+  if(req.session.user){
     res.render('userRegistration', {title: 'User Registration'});
+  }else{
+    console.log('Not authorised');
+    res.redirect('/login');
+  }
 });
 //Below we are attempting to register a new user
 registrationRoute.post("/", async (req, res) => {
