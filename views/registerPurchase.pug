@@ -39,4 +39,52 @@ block content
                             //-a(href="/purchaseRegistration/purchaseConfirmation/" + product._id) Select
                             form(method="GET" action='/purchaseConfirmation')
                                 input(type="hidden", placeholder="", name="id", value=product.id)
+                                button.btn.btn-dark.btn-block(type="submit") Select 
+            tbody
+                each furniture in furnitures
+                    tr
+                        td #{furniture.name}
+                        td #{furniture.make}
+                        td #{furniture.description}
+                        td #{furniture.price}
+                        td #{furniture.downPayment}
+                        td #{furniture.paymentInterval}
+                        td
+                            img(src=furniture.productImage, style="width: 100px; height: 100px;" alt="")
+                        td
+                            //- a(href="/purchaseRegistration/purchaseConfirmation/" + furniture._id) Select
+                            form(method="GET" action='/purchaseConfirmation')
+                                input(type="hidden", placeholder="", name="id", value=furniture.id)
+                                button.btn.btn-dark.btn-block(type="submit") Select 
+            tbody
+                each boutique in boutiques
+                    tr
+                        td #{boutique.name}
+                        td #{boutique.make}
+                        td #{boutique.description}
+                        td #{boutique.price}
+                        td #{boutique.downPayment}
+                        td #{boutique.paymentInterval}
+                        td
+                            img(src=boutique.productImage, style="width: 100px; height: 100px;" alt="")
+                        td
+                            //- a(href="/purchaseRegistration/purchaseConfirmation/" + furniture._id) Select
+                            form(method="GET" action='/purchaseConfirmation')
+                                input(type="hidden", placeholder="", name="id", value=boutique.id)
+                                button.btn.btn-dark.btn-block(type="submit") Select 
+            tbody
+                each electronic in electronics
+                    tr
+                        td #{electronic.name}
+                        td #{electronic.make}
+                        td #{electronic.description}
+                        td #{electronic.price}
+                        td #{electronic.downPayment}
+                        td #{electronic.paymentInterval}
+                        td
+                            img(src=electronic.productImage, style="width: 100px; height: 100px;" alt="")
+                        td
+                            //- a(href="/purchaseRegistration/purchaseConfirmation/" + furniture._id) Select
+                            form(method="GET" action='/purchaseConfirmation')
+                                input(type="hidden", placeholder="", name="id", value=electronic.id)
                                 button.btn.btn-dark.btn-block(type="submit") Select

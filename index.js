@@ -53,6 +53,7 @@ app.set('view engine', 'pug');
 
 //Inorder to use external "static" css and js with express we ask express to access a file, "public", where we will save these files.
 //Bootstrap files can be added to this folder so they can be accessed by express.
+//Below is us setting middleware to be used globally in the application.
 app.use(express.static('public'));
 app.use('/uploads',express.static('uploads'));
 app.use(bodyParser.urlencoded({extended: true}));
