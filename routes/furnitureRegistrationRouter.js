@@ -51,10 +51,14 @@ furnitureRegistrationRoute.post("/", upload.single('productImage'),async (req, r
             productImage: req.file.path
           });
           try {
+            if(req.bod.name == ""){
+              alert('Please enter name');
+            }else{
 
             const furniture = await items.save();
             res.render('furnitureRegistration');
             //res.json(inventory);
+          }
 
 
           

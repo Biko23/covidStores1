@@ -7,6 +7,7 @@ block content
                     div.row
                         div.col-12
                             h3 SITTING ROOM FURNITURE
+                            a(name="livingroom")
                         div.row
                             each product in products
                                 if product.category == "livingroom"
@@ -21,6 +22,7 @@ block content
                     div.row
                         div.col-12
                             h3 Bed room Furniture
+                            a(name="bedroom")
                         div.row
                             each product in products
                                 if product.category == "bedroom"
@@ -35,6 +37,7 @@ block content
                     div.row
                         div.col-12
                             h3 Dining Furniture
+                            a(name="dining")
                         div.row
                             each product in products
                                 if product.category == "dining"
@@ -49,6 +52,7 @@ block content
                     div.row
                         div.col-12
                             h3 Garden Furniture
+                            a(name="garden")
                         div.row
                             each product in products
                                 if product.category == "garden"

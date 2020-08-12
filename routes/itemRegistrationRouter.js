@@ -32,8 +32,19 @@ const productRegister = mongoose.model('products');
 
 //This is the route to display the Product registration page
 itemRegistrationRoute.get('/', (req, res) => {
-    res.render('itemRegistration', {title: 'Product Registration'});
+  if (req.session.user){
+    let currentUser = req.session.user.designation;
+    console.log(currentUser);
+    if (currentUser == 'manager'){
+      res.redirect('/userList');
+    }else{
+    //console.log('Here you are');
+    res.render('purchaseRegistration', {title: 'Product Registration'});}
+  }else{
+    console.log('User not authorised');
+  }
 });
+
 //Below we are attempting to register a new product
 itemRegistrationRoute.post("/", upload.single('productImage'),async (req, res) =>{
           const items =  new productRegister({         //This is the product item object to be registered
@@ -52,7 +63,6 @@ itemRegistrationRoute.post("/", upload.single('productImage'),async (req, res) =
             productImage: req.file.path
           });
           try {
-
             const products = await items.save();
             res.render('itemRegistration');
             //res.json(inventory);

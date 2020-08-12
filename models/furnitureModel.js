@@ -9,7 +9,7 @@ const furnitureSchema = new mongoose.Schema({
     color:{
         type: String,
         trim: true,
-        required: 'Please enter colour'
+        required: 'Please enter color'
     },
     make:{
         type: String,

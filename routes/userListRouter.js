@@ -13,8 +13,8 @@ userListRoute.get('/', async(req, res) => {
     if (req.session.user){
     try{
         let items = await register.find();
-        if(req.query.gender){
-            items = await register.find({gender: req.query.gender});
+        if(req.query.username){
+            items = await register.find({username: req.query.username});
         }res.render('userList', {users: items});
     }catch(err){
         res.status(400).send("unable to find items in the database");

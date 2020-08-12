@@ -4,6 +4,7 @@ block content
         div.row
             div.col-12
                 h3 Entertainment
+                    a(name="ent")
             div.row
                 each product in products
                     if product.category == "entertainment"
@@ -18,6 +19,7 @@ block content
             
             div.col-12
                 h3 Kitchen
+                    a(name="kitchen")
             div.row
                 each product in products
                     if product.category == "kitchen"

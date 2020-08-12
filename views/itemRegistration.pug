@@ -1,4 +1,4 @@
-extends layout
+extends layout2.pug
 block content
     div.container
         div.row
@@ -12,21 +12,22 @@ block content
                     div.row
                         div.col
                             button.form-control.btn.btn-outline-success(type="button" placeholder="Record")
-                                a(href="/furnitureRegistration") Furniture
+                                a.storeA(href="/furnitureRegistration") Furniture
                         div.col
                             button.form-control.btn.btn-outline-success(type="button" placeholder="Record")
-                                a(href="/electronicsRegistration") Electronics
+                                a.storeA(href="/electronicsRegistration") Electronics
                         div.col
                             button.form-control.btn.btn-outline-success(type="button" placeholder="Record")
-                                a(href="/boutiqueRegistration") Boutique
+                                a.storeA(href="/boutiqueRegistration") Boutique
     div.container
         div.row
             div.col-1
             div.col-10
-                form.form-group(action="/itemRegistration" method="POST" enctype="multipart/form-data")
+                form.form-group(action="/itemRegistration" method="POST" enctype="multipart/form-data" name="itemReg")
                     div.row
                         div.col
                             input.form-control(type="text" name="name" placeholder="Name")
+                            span(id="message")
                         div.col
                             input.form-control(type="text" name="color" placeholder="Color")
                     div.row

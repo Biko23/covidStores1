@@ -12,6 +12,7 @@ const userListRoute = require('./routes/userListRouter');
 const loginRoute = require('./routes/loginRouter');
 const purchaseRegistrationRoute = require('./routes/purchaseRegistrationRouter');
 const purchaseConfirmationRoute = require('./routes/purchaseConfirmationRouter');
+const inventoryListRoute = require('./routes/inventoryList');
 
 
 
@@ -83,10 +84,10 @@ console.log('We have lift off....');
 
 //We use the HTTP "get" method to request information to show the user(browser)
 //Below we respond by "rendering"(displaying) the home.pug file. with HTML we would "send_file"
-//Below 
 app.use('/', homeRoute);
 app.use('/registration', registrationRoute);
 app.use('/userList', userListRoute);
+app.use('/inventory', inventoryListRoute);
 app.use('/login', loginRoute);
 app.use('/itemRegistration', itemRegistrationRoute);
 app.use('/electronicsRegistration', electronicsRegistrationRoute);

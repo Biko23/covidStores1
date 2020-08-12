@@ -1,4 +1,4 @@
-extends layout.pug
+extends layout2.pug
 block content
         div.container
             div.row
@@ -20,3 +20,4 @@ block content
                                     form(method="GET" action='/purchaseConfirmation')
                                         input(type="hidden", placeholder="", name="id", value=product.id)
                                         button.btn.btn-dark.btn-block(type="submit") Confirm
+                          

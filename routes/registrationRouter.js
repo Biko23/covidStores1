@@ -9,11 +9,21 @@ const userRegister = mongoose.model('users')
 
 registrationRoute.get('/', (req, res) => {
   if(req.session.user){
-    res.render('userRegistration', {title: 'User Registration'});
+    let currentUser = req.session.user.designation;
+    console.log(currentUser);
+    if (currentUser == 'manager'){
+    // let superStar = ({currentUser: req.session.user});
+
+    // console.log(superStar);
+    // console.log('I see you its the line above that is shit')
+     res.render('userRegistration', {title: 'User Registration'});
   }else{
     console.log('Not authorised');
     res.redirect('/login');
   }
+}else{
+  res.redirect('/purchaseRegistration');
+}
 });
 //Below we are attempting to register a new user
 registrationRoute.post("/", async (req, res) => {
@@ -28,7 +38,8 @@ registrationRoute.post("/", async (req, res) => {
                 designation: req.body.designation,
                 nin: req.body.nin,
                 eid: req.body.eid,
-                password: req.body.password,});
+                //password: req.body.password,
+              });
       await userRegister.register(items, req.body.password, (err) => {
         if (err) { throw err }
         res.redirect('/userList')

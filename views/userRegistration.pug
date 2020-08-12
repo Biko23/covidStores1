@@ -1,4 +1,4 @@
-extends layout.pug
+extends layout2.pug
 block content
     div.container
         div.row
@@ -7,12 +7,13 @@ block content
             div.col-sm-12.col-md-6
                 div.form-group
                     h3 User Registration.
-                    form(action="/registration" method="POST")
+                    form(action="/registration" method="POST" name="UserReg" id="UserReg")
                         div.form-row
-                            input(type="text" name="username" placeholder="User Name")
+                            input.form-control(type="text" name="username" placeholder="User Name")
+                            
                         div.form-row
-                            input(type="text" name="fname" placeholder="First Name")
-                            input(type="text" name="lname" placeholder="Last Name")
+                            input.form-control(type="text" name="fname" placeholder="First Name")
+                            input.form-control(type="text" name="lname" placeholder="Last Name")
                         div.custom-control.custom-radio.custom-control-inline
                             input.custom-control-input(type="radio" name="gender" id ="mgender" value ="Male")
                             label.custom-control-label(for="mgender") Male
@@ -20,20 +21,21 @@ block content
                             input.custom-control-input(type="radio" name="gender" id ="fgender" value ="Female")
                             label.custom-control-label(for="fgender") Female
                         div.form-row
-                            input(type="text" name="country" placeholder="Country")
-                            input(type="text" name="city" placeholder="City")
+                            input.form-control(type="text" name="country" placeholder="Country")
+                            input.form-control(type="text" name="city" placeholder="City")
                         div.custom-control.custom-radio.custom-control-inline
-                            input.custom-control-input(type="radio" name="designation" id ="staff" value ="Male")
-                            label.custom-control-label(for="staff") Staff
+                            input.custom-control-input(type="radio" name="designation" id ="manager" value ="manager")
+                            label.custom-control-label(for="manager") Manager
                         div.custom-control.custom-radio.custom-control-inline
-                            input.custom-control-input(type="radio" name="designation" id ="client" value ="Female")
-                            label.custom-control-label(for="client") Client
+                            input.custom-control-input(type="radio" name="designation" id ="agent" value ="agent")
+                            label.custom-control-label(for="agent") Agent
                         div.form-row
-                            input(type="text" name="nin" placeholder="National Id")
-                            input(type="text" name="ein" placeholder="Employee Id")
+                            input.form-control(type="text" name="nin" placeholder="National Id")
+                            .error#userErr
+                            input.form-control(type="text" name="ein" placeholder="Employee Id")
                         div.form-row
-                            input(type="password" name="password" placeholder="Password")
-                            input(type="password" name="confirmPassword" placeholder="Confirm Password")
+                            input.form-control(type="password" name="password" placeholder="Password")
+                            input.form-control(type="password" name="confirmPassword" placeholder="Confirm Password")
                         input.form-control(type="submit" placeholder="Register")
             
             div.col-md-3

@@ -16,14 +16,19 @@ html
                 li.nav-item
                     a.nav-link(href="/") About Us
                 li.nav-item
-                    a.nav-link(href="/home/furniture") Furniture
+                    a.nav-link(href="/furnitureRegistration") Furniture 
                 li.nav-item
-                    a.nav-link(href="/home/electronics") Electronics
+                    a.nav-link(href="/electronicsRegistration") Electronics
                 li.nav-item
-                    a.nav-link(href="/home/boutique") Boutique
-        a(href="/login")
-            button.btn.btn-outline-success
-                img.btnlogo(src="/img/staffonly.png", alt="Staff Login") 
+                    a.nav-link(href="/boutiqueRegistration") Boutique
+                li.nav-item
+                    a.nav-link(href="/registration") User Registration
+                li.nav-item
+                    a.nav-link(href="/inventory") Inventory
+        form(action="/logout" method="POST")
+            a(href="/logout")
+                button.btn.btn-outline-success
+                    img.btnlogo(src="/img/logout.jpg", alt="Staff Login") 
     body    
         div.containerfluid
             div.row

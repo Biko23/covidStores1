@@ -2,15 +2,15 @@ extends layout2.pug
 block content
     div.container
         header.card-header
-            h4.card-title New Purchase
+            h4.card-title Inventory
             |&nbsp
     div.container
         div.form-row
             div.col.form-group.col-md-12    
-                form.search(action='/registerPurchase')
+                form.search(action='/userList')
                     div.form-row
                         div.col-md-8
-                            input.form-control(name='name' placeholder="Search by name...")
+                            input.form-control(name='username' placeholder="Enter your search term ...")
                         div.col-md-4
                             input.btn.btn-dark.btn-block(type="submit")
         table.table
@@ -39,7 +39,7 @@ block content
                             //-a(href="/purchaseRegistration/purchaseConfirmation/" + product._id) Select
                             form(method="GET" action='/purchaseConfirmation')
                                 input(type="hidden", placeholder="", name="id", value=product.id)
-                                button.btn.btn-dark.btn-block(type="submit") Select 
+                                button.btn.btn-dark.btn-block(type="submit") Delete
             tbody
                 each furniture in furnitures
                     tr
@@ -55,7 +55,7 @@ block content
                             //- a(href="/purchaseRegistration/purchaseConfirmation/" + furniture._id) Select
                             form(method="GET" action='/purchaseConfirmation')
                                 input(type="hidden", placeholder="", name="id", value=furniture.id)
-                                button.btn.btn-dark.btn-block(type="submit") Select 
+                                button.btn.btn-dark.btn-block(type="submit") Delete
             tbody
                 each boutique in boutiques
                     tr
@@ -71,7 +71,7 @@ block content
                             //- a(href="/purchaseRegistration/purchaseConfirmation/" + furniture._id) Select
                             form(method="GET" action='/purchaseConfirmation')
                                 input(type="hidden", placeholder="", name="id", value=boutique.id)
-                                button.btn.btn-dark.btn-block(type="submit") Select 
+                                button.btn.btn-dark.btn-block(type="submit") Delete
             tbody
                 each electronic in electronics
                     tr
@@ -87,4 +87,4 @@ block content
                             //- a(href="/purchaseRegistration/purchaseConfirmation/" + furniture._id) Select
                             form(method="GET" action='/purchaseConfirmation')
                                 input(type="hidden", placeholder="", name="id", value=electronic.id)
-                                button.btn.btn-dark.btn-block(type="submit") Select
+                                button.btn.btn-dark.btn-block(type="submit") Delete

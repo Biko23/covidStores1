@@ -8,6 +8,8 @@ loginRoute.get('/', (req, res) => {
 //process the username and password
 loginRoute.post('/', passport.authenticate('local'), (req, res) => {
     req.session.user = req.user;
-    res.redirect('/itemRegistration');
+    let currentUser = req.session.user.name;
+    console.log(currentUser);
+    res.redirect('/purchaseRegistration');
 });
 module.exports = loginRoute;

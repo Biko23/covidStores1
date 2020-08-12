@@ -16,6 +16,7 @@ const productRegister = mongoose.model('products');
 //     res.render('registerPurchase', {title: 'Purchase Registration'});
 // });
 purchaseConfirmationRoute.get('/', async(req, res) => {
+    if (req.session.user){
     const item = await productRegister.findById(req.query.id);
     //res.json(items);
     console.log(item);
@@ -29,7 +30,10 @@ purchaseConfirmationRoute.get('/', async(req, res) => {
     // }catch(err){
     //     res.status(400).send('Unable to select from database');
     // }
-
+    }else{
+        console.log('User not authorised');
+        res.redirect('login');
+    }
 })
 
 //We export this route to be accessed in the index.js
