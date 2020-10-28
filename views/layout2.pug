@@ -16,15 +16,17 @@ html
                 li.nav-item
                     a.nav-link(href="/") About Us
                 li.nav-item
-                    a.nav-link(href="/furnitureRegistration") Furniture 
-                li.nav-item
-                    a.nav-link(href="/electronicsRegistration") Electronics
-                li.nav-item
-                    a.nav-link(href="/boutiqueRegistration") Boutique
+                    a.nav-link(href="/purchaseRegistration") Transaction Registration
                 li.nav-item
                     a.nav-link(href="/registration") User Registration
                 li.nav-item
                     a.nav-link(href="/inventory") Inventory
+                li.nav-item.dropdown
+                    a.nav-link.dropdown-toggle#navbarDropdown(href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") Inventory Register
+                    div.dropdown-menu(aria-labelledby="navbarDropdown")
+                        a.dropdown-item.dropBrand(href="/furnitureRegistration") Furniture 
+                        a.dropdown-item.dropBrand(href="/electronicsRegistration") Electronics
+                        a.dropdown-item.dropBrand(href="/boutiqueRegistration") Boutique
         form(action="/logout" method="POST")
             a(href="/logout")
                 button.btn.btn-outline-success

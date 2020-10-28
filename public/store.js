@@ -46,3 +46,19 @@
 //     }
 
 // }
+
+
+// function val(){
+//     name = document.furnitureReg.name;
+
+//     var alpha = /^[a-zA-Z-,]+(\s{0,1}[a-zA-Z-, ])*$/
+//     // validating Item Name
+//     if (!name.value.match(alpha)) {
+//         name.style.border = '1px solid red';
+//         // document.getElementById("nameErr").innerHTML = "Item name should be alphabets only";
+//         alert("Item name should be alphabets only")
+
+//         return false;
+//     }
+
+// }

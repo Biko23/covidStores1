@@ -48,6 +48,9 @@ footer{
     padding: 8px;
     display: inline;
 }
+.dropBrand:hover{
+    background-color: #8AC53F;
+}
 a{
     color: #8AC53F;
     text-decoration: none;

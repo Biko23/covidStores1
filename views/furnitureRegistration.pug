@@ -27,7 +27,7 @@ block content
                     div.row
                         div.col
                             input.form-control(type="text" name="name" placeholder="Name")
-                            div.error#nameErr
+                            small.error#nameErr
                         div.col
                             input.form-control(type="text" name="color" placeholder="Color")
                     div.row
@@ -63,5 +63,6 @@ block content
                             input.form-control-file(type="file", name="productImage")
                     div.row
                         div.col
-                            button.form-control.btn.btn-outline-success(type="submit" placeholder="Record") Record
+                            button.form-control.btn.btn-outline-success(type="submit" placeholder="Record" onclick ="return val()") Record
             div.col-1
+                script(src="store.js")
